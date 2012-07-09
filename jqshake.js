@@ -15,8 +15,7 @@
 
                 $self
                     .data('shake', {
-                        sensitivity : data || 15,
-                        isMoving: false,
+                        sensitivity : (typeof data === number) ? data : 15,
                         didShake: false,
                         timeout_id: null,
                         change: 0,
@@ -63,7 +62,7 @@
         if(data.change > data.sensitivity) {
             data.didShake = true;
             clearTimeout(data.timeout_id);
-            data.timeout_id = setTimeout(determineShake,250);
+            data.timeout_id = setTimeout(determineShake, 250);
         }
 
         data.x2 = data.x1;
