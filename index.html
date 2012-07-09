@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Shake</title>
+</head>
+<body>
+  <div class="console"></div>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script src="jqshake.js"></script>
+  <script>
+    $(window).on('shake', function(event){
+      $('.console').html(function(i,v){
+        return v+' shake!'
+      });
+    });
+  </script>
+</body>
+</html>
